@@ -1,0 +1,193 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>EwebVisor | Contact</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="/static/css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="/static/css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="/static/images/eweb-logo.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="/static/css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      
+   </head>
+   <!-- body -->
+   <body class="main-layout inner_posituong contact_page">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="/static/images/loading.gif" alt="#" /></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <img src="/static/images/eweb-logo.png" alt="#" width="200" height="70" alt="#" style="margin-top: -22px;" />
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item ">
+                                 <a class="nav-link" href="/">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="/about">About</a>
+                              </li>
+                              
+                              <li class="nav-item">
+                                 <a class="nav-link" href="/product">Products</a>
+                              </li>
+                              <li class="nav-item active">
+                                 <a class="nav-link" href="/contact">Contact Us</a>
+                              </li>
+                              
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- end header inner -->
+      <!-- end header -->
+      <!--  contact -->
+      <div class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  {% for msg in messages %}
+                  <div class="alert alert-success" role="alert">
+                     <h4 class="alert-heading">Hey!</h4>
+                     <p>{{msg}}</p>
+                     <hr>
+                     
+                   </div>
+                     
+                  {% endfor %}
+                  <div class="titlepage">
+                     <h2>Contact Now</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-10 offset-md-1" data-wow-delay="0.3s">
+                  <form method="post" id="contact" role="form" novalidate="novalidate" class="main_form">
+                     {% csrf_token %}
+                     <div class="row">
+                        <div class="col-md-12 ">
+                           <input class="contactus" id="name" placeholder="Name" type="type" name="name"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" id="emai" name="email" placeholder="Email" type="type" name="email"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" id="phone" name="phone" placeholder="Phone Number" type="type" name="phone">                          
+                        </div>
+                        <div class="col-md-12">
+                           <textarea class="textarea" placeholder="Message" type="type" id="message" name="message"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                           <button class="send_btn" type="submit" value="submit">Send</button>
+                        </div> 
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end contact -->
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <img class="logo1" src="/static/images/eweb-logo.png" alt="#" width="200" height="70" style="margin-left: -24px;"/>
+                     <ul class="social_icon">
+                        <li><a href="https://www.facebook.com/ewebvisor.technopreneurs"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                       
+                        <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <h3>About Us</h3>
+                     <ul class="about_us">
+                        <li>Eweb-Visor had made its way to fame and name as a high-tech solution for all IT equipment rental needs in the Kolkata region.</li>
+                     </ul>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <h3>Contact Us</h3>
+                     <ul class="conta">
+                        <li>ECOSPACE BUSINESS PARK, 
+                           Street Number 372, AA II, Newtown, Kolkata, West Bengal 700156<br> +91 8100474988</li>
+                     </ul>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <form class="bottom_form">
+                        <h3>Newsletter</h3>
+                        <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
+                        <button class="sub_btn">subscribe</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>© 2023 All Rights Reserved. Design by<a href="https://html.design/"> SpiceWEB</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/popper.min.js"></script>
+      <script src="/static/js/bootstrap.bundle.min.js"></script>
+      <script src="/static/js/jquery-3.0.0.min.js"></script>
+      <!-- sidebar -->
+      <script src="/static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="/static/js/custom.js"></script>
+   </body>
+</html>
+
